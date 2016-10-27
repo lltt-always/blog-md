@@ -37,33 +37,34 @@ render(
 
 ## createMemoryHistory
 
+## Link
 
-    3. 在一个应用中，最常用的组件应该是<link>，它允许用户在应用中进行导航。它与<a>标签的唯一区别是它知道它的链接地址是否是活跃的。
-        1. to：位置描述，通常是一个字符串或者对象，其语义如下,
-            * 字符串：表示链接到的绝对地址（不支持相对地址）
-            * 对象：
-            * 
-                1. pathname：一个字符串，表示链接到的地址
-                2. query：待转换为字符串的key：value对象（弃用）
-                3. hash：放入URL的hash值（弃用）
-                4. state：保存location的状态（弃用）
+在一个应用中，最常用的组件应该是<link>，它允许用户在应用中进行导航。它与<a>标签的唯一区别是它知道它的链接地址是否是活跃的。
 
-
-        2. activeClassName：当<Link>路由被激活的className，默认没有active class
-        3. activeStyle：当<Link>路由被激活的样式
-        4. onClick(e)：点击事件的句柄函数，调用e.stopPropagation()可以阻止事件冒泡，调用e.preventDefault()可以组织开火的传递？？
-        5. onlyActiveOnIndex：如果是true，当前路由和link路由匹配时被激活
-
-    4. <Route>——配置组件。用来显式地映射路由到应用的组件层。
-        1. path：在URL中使用的path，它可以是相对父路由的地址，但若以'/'开头则表示绝对地址。如果未定义，路由器会匹配子路由。注：绝对地址不能用于动态加载的路由配置。
-        2. component：当路由与URL匹配时渲染的单一组件，它可以调用父路由组件的this.props.children属性来渲染
-        3. components：当路径与URL匹配时，路由可以定义一个或多个named组件为[name]: component对象来渲染，可以嗲用父组件的this.props[name]
-
-    5. 导航<Link>封装：一般情况下不需要知道<Link>是否被激活，但是主导航链接需要知道自己是否被激活，以显示正确的样式。
+1. to：位置描述，通常是一个字符串或者对象，其语义如下,
+    * 字符串：表示链接到的绝对地址（不支持相对地址）
+    * 对象：
+    * 
+        1. pathname：一个字符串，表示链接到的地址
+        2. query：待转换为字符串的key：value对象（弃用）
+        3. hash：放入URL的hash值（弃用）
+        4. state：保存location的状态（弃用）
 
 
+2. activeClassName：当<Link>路由被激活的className，默认没有active class
+3. activeStyle：当<Link>路由被激活的样式
+4. onClick(e)：点击事件的句柄函数，调用e.stopPropagation()可以阻止事件冒泡，调用e.preventDefault()可以组织开火的传递？？
+5. onlyActiveOnIndex：如果是true，当前路由和link路由匹配时被激活
 
-<IndexRedirect> 
+
+## Route
+<Route>——配置组件。用来显式地映射路由到应用的组件层。
+
+1. path：在URL中使用的path，它可以是相对父路由的地址，但若以'/'开头则表示绝对地址。如果未定义，路由器会匹配子路由。注：绝对地址不能用于动态加载的路由配置。
+2. component：当路由与URL匹配时渲染的单一组件，它可以调用父路由组件的this.props.children属性来渲染
+3. components：当路径与URL匹配时，路由可以定义一个或多个named组件为[name]: component对象来渲染，可以嗲用父组件的this.props[name]
+
+## IndexRedirect
 
 允许对父路由重定向到其他路由，它可以设置成一个表示父路由默认路由的子路由。
 

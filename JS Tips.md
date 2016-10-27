@@ -7,8 +7,9 @@ Javascript技巧小贴士
 
 <!--more-->
 
-1. document.getElementsByName()获得的是数组  
-   document.getElementById()获得的是一个元素
+1. document.getElementsByTagName()获得的是一个DOM对象集合，有length属性，可以遍历 
+   document.getElementById()获得的是一个DOM对象
+   $("") Jquery选择器获得的是Jquery封装好的对象
 
 2. string.replace(/&/gi, "&amp;") //g表示全局替换；i表示忽略大小写
 
