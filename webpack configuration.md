@@ -154,5 +154,14 @@ output: {
 // rest of your application entry
 ```
 
+###output.chunkFilename
+没有入口的 chunks 文件名，其值是对于 `output.path` 的相对路径
+[id] 是指 chunk 的id
+[name] 是指 chunk 的名字（如果chunk没有名字则使用它的id）
+[hash] 是指编译文件的hash值
+
+###output.sourceMapFilename
+JS文件的SourceMap文件名，这些文件保存在 output.path 目录
+
 #备注
 >1. chunk 被entry所依赖的额外代码块
