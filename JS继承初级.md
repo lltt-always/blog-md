@@ -1,5 +1,5 @@
 ---
-title: JS继承机制原理（初级）
+title: JS继承（初级）
 tags: Javascript
 ---
 
@@ -48,7 +48,8 @@ console.log(woman.weight); //50
 
 - 引入构造函数的prototype属性
 
-prototype属性为一个对象，称prototype对象。
+在JavaScript中，类的所有实例对象都从类的原型对象上继承属性，因此原型对象是类的核心。
+prototype属性为一个对象，称原型对象（prototype对象）。
 实例需要共享的属性、方法写入prototype对象；
 实例不需要共享的属性、方法写入构造函数。
 实例对象一旦创建自动应用prototype对象的属性与方法。
@@ -76,4 +77,4 @@ console.log(man.legs); //4
 console.log(woman.legs); //2
 ```
 
-注：_proto_存放的是实例继承自构造函数prototype的属性与方法，可直接调用。
+注：`__proto__`存放的是实例继承自构造函数prototype的属性与方法，可直接调用。
